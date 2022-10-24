@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans","segoe ui",Helvetica,Arial,sans-serif;
+}
+
+html,
+body {
+    min-height: 100%;
+    background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+}
+
+.container{
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.flex-box {
+    flex-direction: column;
+    display: flex; /* or inline-flex */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo{
+    margin-bottom: 45px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.wrapper {
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .question-content {
+    color: #333;
+    text-align: left;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    padding: 20px 30px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
+    border-color: white;
+}
+
+.wrapper .box {
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.wrapper .box label {
+    display: flex;
+    height: 53px;
+    width: 100%;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 50px;
+    margin: 10px 0;
+    padding-left: 20px;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.option-custom:checked+.option-label {
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    border-color: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+}
+
+.wrapper .box label .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.option-custom:checked+.option-label .dot {
+    background: #fff;
+}
+
+.box label .dot::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.option-custom:checked+.option-label .dot::before {
+    background:linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper .box label .text {
+    color: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.option-custom:checked+.option-label .text {
+    color: #fff;
+}
+
+.wrapper .box input[type="radio"] {
+    display: none;
+}
+
+.btn-custom {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: .5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border: 0;
+    display: block;
+    background-image: linear-gradient(to right, #4776e6 0%, #8e54e9 51%, #4776e6 100%)
+}
+
+.btn-custom:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.w-100-custom{
+    width: 100%;
+}
+
+.w-50-custom{
+    width: 50%;
+}
+
+.d-flex-custom{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+#message {
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 5rem;
+}
+
+#message h1{  
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hidden{
+    display: none;
+}
+.form-x{
+    margin: 30px 0;
+}
+.label {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+}
+
+.input {
+    margin: 0 15px 15px 10px;
+    padding: 15px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 20px);
+}
+
+.alert {
+    position: fixed;
+    top: 10px;
+    padding: 20px;
+    background-color: white; /* Red */
+    border-radius: 10px;
+    color: #f44336;
+    margin-bottom: 15px;
+    display: none;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: #f44336;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+  .card-header {
+    cursor: pointer;
+}
+
+  
