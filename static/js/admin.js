@@ -7,6 +7,9 @@ function display() {
     http.open("GET", "/getListQuestions", true);
     http.setRequestHeader("Content-type","application/json");
     http.send();
+    http.setRequestHeader("Cache-Control", "no-cache, no-store, max-age=0");
+    http.setRequestHeader("Expires", "Tue, 01 Jan 1980 1:00:00 GMT");
+    http.setRequestHeader("Pragma", "no-cache");
     http.onload = async function() {
         var datalist = JSON.parse(http.responseText);
         

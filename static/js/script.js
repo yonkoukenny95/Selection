@@ -5,6 +5,9 @@ function display() {
     var http = new XMLHttpRequest();
     http.open("GET", "/getSurvey", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    http.setRequestHeader("Cache-Control", "no-cache, no-store, max-age=0");
+    http.setRequestHeader("Expires", "Tue, 01 Jan 1980 1:00:00 GMT");
+    http.setRequestHeader("Pragma", "no-cache");
     http.send();
     http.onload = function() {
         while (listArea.hasChildNodes()) {
