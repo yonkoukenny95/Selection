@@ -14,15 +14,26 @@
   <body>
     <div class="container">
       <div class="float-end"><a href="/logout" class="btn btn-light">Thoát</a></div>
-      <div class="m-3"><h1 class="text-white">Danh sách</h1></div>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control form-control-lg" placeholder="Thêm câu hỏi..." name="question-content" />
-        <button class="btn btn-primary text-white" onClick="addQuestion()">
-          <span><i class="fa fa-plus"></i> Thêm câu hỏi</span>
-        </button>
+      <h1 class="text-white mt-3">Danh sách câu hỏi cho phần bình chọn</h1>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg" placeholder="Thêm câu hỏi..." name="question-content" />
+            <button class="btn btn-primary text-white" onClick="addQuestion()">
+              <span><i class="fa fa-plus"></i> Thêm câu hỏi</span>
+            </button>
+          </div>
+          <div id="list-question"></div>
+        </div>
+        <div class="col-sm-3">
+          <h5 class="text-white mt-3">QR Code dành cho khán giả</h2>
+          <div class="qr-image" id="qrcode"></div><hr>
+          <h5 class="text-white mt-3">QR Code dành cho khách mời</h2>
+          <div class="qr-image" id="qrcodeVIP"></div>
+        </div>
       </div>
-      <div id="list-question"></div>
     </div>
   </body>
+  <script src="/static/libs/qr/js/qrcode.min.js"></script>
   <script src="/static/js/admin.js"></script>
 </html>

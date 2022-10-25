@@ -32,22 +32,29 @@ body {
     border-radius: 10px;
 }
 
+.title{
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 30px 30px 30px;
+    text-align: center;
+}
+
 .wrapper {
-    width: 450px;
+    /*width: 450px;*/
     background: #fff;
     border-radius: 10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper .question-content {
-    color: #333;
+    color: #fff;
     text-align: left;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
     padding: 20px 30px;
     font-size: 25px;
     font-weight: 500;
     border-radius: 10px 10px 0 0;
-    border-color: white;
 }
 
 .wrapper .box {
@@ -62,7 +69,7 @@ body {
     width: 100%;
     align-items: center;
     border: 1px solid lightgrey;
-    border-radius: 50px;
+    border-radius: 10px;
     margin: 10px 0;
     padding-left: 20px;
     cursor: default;
@@ -122,7 +129,7 @@ body {
 
 .btn-custom {
     width: calc(100% - 20px);
-    margin: 10px;
+    margin: 0 10px 20px 10px;
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
@@ -136,12 +143,19 @@ body {
     background-image: linear-gradient(to right, #4776e6 0%, #8e54e9 51%, #4776e6 100%)
 }
 
+#btn-submit{
+    background-image: linear-gradient(to right, #FF8008 0%, #FFC837  51%, #FF8008  100%);
+    font-weight: 500;
+}
+
 .btn-custom:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
 .w-100-custom{
     width: 100%;
@@ -176,7 +190,8 @@ body {
     display: none;
 }
 .form-x{
-    margin: 30px 0;
+    margin: 30px 10px;
+    min-width: 30vh;
 }
 .label {
     margin-left: 10px;
@@ -225,4 +240,11 @@ body {
     cursor: pointer;
 }
 
+.qr-image img{
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
   

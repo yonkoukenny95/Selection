@@ -67,8 +67,8 @@ function displayQuestion(question){
         ul.appendChild(displayAnswer(element.id, element.content, element.vote, question.ID));
     });
 
-    let input = '<input type="text" class="form-control"  name="input-'+question.ID+'" placeholder="Thêm đáp án khác" />';
-    let button = '<button class="btn btn-success add-answer" onClick="addAnswer(\''+question.ID+'\')"><span class="fa fa-plus"></span> Add</button>';
+    let input = '<input type="text" class="form-control"  name="input-'+question.ID+'" placeholder="Thêm lựa chọn khác" />';
+    let button = '<button class="btn btn-success add-answer" onClick="addAnswer(\''+question.ID+'\')"><span class="fa fa-plus"></span> Thêm lựa chọn</button>';
     let div2 = document.createElement('div');
     div2.classList.add("input-group");
     div2.innerHTML = input + button;
@@ -94,6 +94,7 @@ function displayAnswer(id, content, vote, parrentID) {
     li.setAttribute("class","list-group-item d-flex justify-content-between align-items-center");
     
     var div1 = document.createElement('div'); 
+    div1.setAttribute("class","col-sm-2 d-flex align-items-end justify-content-end");
     var contentText = '<span>'+content+'</span>';     
     var span = '<span class="badge bg-primary rounded-pill me-2">'+vote+' votes</span>';        
     var button = '<button class="btn btn-danger btn-sm" onClick="removeAnswer(\''+id+'\',\''+parrentID+'\')"><span class="fa fa-close"></span></button>';
@@ -202,6 +203,25 @@ function publicQuestion(id){
     }
 }
 
+function displayQRCode (){
+    console.log(window.location.href);
+    let url = window.location.href;
+    genrateQRCode("qrcode",url.replace("admin",""));
+    genrateQRCode("qrcodeVIP",url.replace("admin","VIP"));
+}
+
+function genrateQRCode(elementID, text){
+    const qrcode = new QRCode(document.getElementById(elementID), {
+        text: text,
+        width: 200,
+        height: 200,
+        colorDark : '#000',
+        colorLight : '#fff',
+        correctLevel : QRCode.CorrectLevel.H
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function(event) { 
     display();
+    displayQRCode();
 });
