@@ -59,7 +59,7 @@ app.get("/login", (req, res) => {
 app.post("/auth", (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
-  if (username == "admin" && password == "123") {
+  if (username == "admin" && password == "Thanhcong@678") {
     req.session.User = {
       username: "admin",
       website: "example.org.vn",
