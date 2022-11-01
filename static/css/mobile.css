@@ -1,0 +1,55 @@
+@media screen and (max-width: 1190px) {
+    .md-fixed-right {
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .md-fixed-left {
+        padding-top: 15px;
+        position: sticky;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .md-fixed-left>.main-text {
+        font-size: 12vw;
+    }
+
+    .md-fixed-right>.main-text {
+        font-size: 8vw;
+    }
+
+    .wrapper {
+        /*minwidth: 450px;*/
+        min-width: 95%;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .wrapper .box label .dot {
+        height: 3vw;
+        width: 3vw;
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+    .box label .dot::before {
+        width: 1.5vw;
+        height: 1.5vw;
+        max-width: 9px;
+        max-height: 9px;
+    }
+
+    #message {
+        position: relative;
+        min-height: 50vh;
+        font-size: 5vw;
+        padding: 30px;
+    }
+}

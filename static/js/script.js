@@ -47,12 +47,21 @@ function displayQuestion(value, index, array) {
       let btnPrev = '<button class="btn-custom" onclick="prevTab()">Quay lại</button>';
       div1.innerHTML = btnPrev;
     }
-
     if (typeof isVip === "undefined" || isVip === null) {
       let btnSubmit = '<button class="btn-custom" id="btn-submit" onclick="submitForm()">Bình chọn</button>';
+      if (div1.innerHTML == "") {
+        div2.setAttribute("class", "w-100-custom");
+        div1.setAttribute("class", "hidden");
+      }
+
       div2.innerHTML = btnSubmit;
     } else {
       let btnSubmit = '<button class="btn-custom" id="btn-submit" onclick="submitVIPAnswers()">Bình chọn</button>';
+      if (div1.innerHTML == "") {
+        div2.setAttribute("class", "w-100-custom");
+        div1.setAttribute("class", "hidden");
+      }
+
       div2.innerHTML = btnSubmit;
     }
   } else if (index === 0) {
@@ -98,7 +107,6 @@ function addCheckBoxEvent() {
   console.log(checkboxes.length);
   checkboxes.forEach(function (checkbox) {
     checkbox.addEventListener("change", function () {
-      console.log("listener checkbox");
       let maximum = 3;
       let answersCheckBox = document.querySelectorAll('input[name="' + this.name + '"]:checked');
       if (answersCheckBox.length > maximum) {

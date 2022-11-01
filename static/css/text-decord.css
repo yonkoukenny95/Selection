@@ -1,0 +1,41 @@
+.main-text {
+    position: relative;
+    background: linear-gradient(to right, #fff, #eee, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: Uppercase;
+    margin-bottom: 0.5em;
+    font-size: 6rem;
+    color: #E4E5E6;
+}
+
+.main-text:before,
+.main-text:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-text:before {
+    z-index: -1;
+    text-shadow: -0.001em -0.001em 1px rgb(255 255 255 / 35%);
+}
+
+.shadow-left:after {
+    z-index: -2;
+    text-shadow: 10px 10px 25px #005CA9,
+        -10px 10px 25px #005CA9,
+        -10px -10px 25px #005CA9,
+        10px -10px 25px #005CA9;
+    mix-blend-mode: multiply;
+}
+
+.shadow-right:after {
+    z-index: -2;
+    text-shadow: 10px 10px 25px #ED1C24,
+        -10px 10px 25px #ED1C24,
+        -10px -10px 25px #ED1C24,
+        10px -10px 25px #ED1C24;
+    mix-blend-mode: multiply;
+}
