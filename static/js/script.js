@@ -103,7 +103,6 @@ function addCheckBoxEvent() {
       let answersCheckBox = document.querySelectorAll('input[name="' + this.name + '"]:checked');
       if (answersCheckBox.length > maximum) {
         this.checked = false;
-      } else {
         document.getElementById("alert-Message").style.display = "block";
         sleep(3000).then(() => {
           document.getElementById("alert-Message").style.display = "none";
