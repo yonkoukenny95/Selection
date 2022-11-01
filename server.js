@@ -134,7 +134,7 @@ app.post("/submitVIPAnswers", (req, res) => {
       });
       for (let i = 0; i < question.Answers.length; i++) {
         if (question.Answers[i].id == element.answerID) {
-          question.Answers[i].vote += 10;
+          question.Answers[i].vote += 5;
         }
       }
     });

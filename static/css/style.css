@@ -128,7 +128,7 @@ body {
     color: #fff;
 }
 
-.wrapper .box input[type="radio"] {
+.wrapper .box input[type="checkbox"] {
     display: none;
 }
 
