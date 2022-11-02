@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const session = require("express-session");
+const fileDataName = "./demo.json";
 
 function jsonReader(filePath, cb) {
   fs.readFile(filePath, (err, fileData) => {
@@ -38,6 +39,10 @@ app.get("/", (req, res) => {
   } else {
     res.sendFile(__dirname + "/static/index.html");
   }
+});
+
+app.get("/result", (req, res) => {
+  res.sendFile(__dirname + "/static/result.html");
 });
 
 app.get("/VIP", (req, res) => {
@@ -75,7 +80,7 @@ app.get("/logout", (req, res) => {
 });
 
 app.get("/getSurvey", (req, res) => {
-  fs.readFile("./data.json", (err, fileData) => {
+  fs.readFile(fileDataName, (err, fileData) => {
     if (err) {
       console.log(err);
     }
@@ -93,7 +98,7 @@ app.get("/getSurvey", (req, res) => {
 
 app.post("/submitAnswers", (req, res) => {
   let answers = req.body.answers;
-  jsonReader("./data.json", (err, questionList) => {
+  jsonReader(fileDataName, (err, questionList) => {
     if (err) {
       console.log("Error reading file:", err);
       return;
@@ -110,7 +115,7 @@ app.post("/submitAnswers", (req, res) => {
       }
     });
 
-    fs.writeFile("./data.json", JSON.stringify(questionList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(questionList), (err) => {
       if (err) console.log("Error writing file:", err);
     });
   });
@@ -122,7 +127,7 @@ app.post("/submitAnswers", (req, res) => {
 
 app.post("/submitVIPAnswers", (req, res) => {
   let answers = req.body.answers;
-  jsonReader("./data.json", (err, questionList) => {
+  jsonReader(fileDataName, (err, questionList) => {
     if (err) {
       console.log("Error reading file:", err);
       return;
@@ -139,7 +144,7 @@ app.post("/submitVIPAnswers", (req, res) => {
       }
     });
 
-    fs.writeFile("./data.json", JSON.stringify(questionList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(questionList), (err) => {
       if (err) console.log("Error writing file:", err);
     });
   });
@@ -164,7 +169,7 @@ app.get("/admin", (req, res) => {
 });
 
 app.get("/getListQuestions", (req, res) => {
-  fs.readFile("./data.json", (err, fileData) => {
+  fs.readFile(fileDataName, (err, fileData) => {
     if (err) {
       console.log(err);
     }
@@ -179,7 +184,7 @@ app.get("/getListQuestions", (req, res) => {
 
 app.post("/addQuestion", (req, res) => {
   let question = req.body.question;
-  jsonReader("./data.json", (err, oldList) => {
+  jsonReader(fileDataName, (err, oldList) => {
     if (err) {
       console.log("Error reading file:", err);
       res.send("fail");
@@ -195,7 +200,7 @@ app.post("/addQuestion", (req, res) => {
 
     var newList = [...oldList, questionObject];
 
-    fs.writeFile("./data.json", JSON.stringify(newList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(newList), (err) => {
       if (err) {
         console.log("Error writing file:", err);
         res.send("fail");
@@ -207,7 +212,7 @@ app.post("/addQuestion", (req, res) => {
 
 app.post("/deleteQuestion", (req, res) => {
   let questionId = req.body.questionId;
-  jsonReader("./data.json", (err, oldList) => {
+  jsonReader(fileDataName, (err, oldList) => {
     if (err) {
       console.log("Error reading file:", err);
       res.send("fail");
@@ -216,7 +221,7 @@ app.post("/deleteQuestion", (req, res) => {
     let newList = oldList.filter(function (element) {
       return element.ID !== questionId;
     });
-    fs.writeFile("./data.json", JSON.stringify(newList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(newList), (err) => {
       if (err) {
         console.log("Error writing file:", err);
         res.send("fail");
@@ -228,7 +233,7 @@ app.post("/deleteQuestion", (req, res) => {
 
 app.post("/publicQuestion", (req, res) => {
   let questionId = req.body.questionId;
-  jsonReader("./data.json", (err, oldList) => {
+  jsonReader(fileDataName, (err, oldList) => {
     if (err) {
       console.log("Error reading file:", err);
       res.send("fail");
@@ -238,7 +243,7 @@ app.post("/publicQuestion", (req, res) => {
       return element.ID == questionId;
     });
     question.Public = !question.Public;
-    fs.writeFile("./data.json", JSON.stringify(oldList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(oldList), (err) => {
       if (err) {
         console.log("Error writing file:", err);
         res.send("fail");
@@ -251,7 +256,7 @@ app.post("/publicQuestion", (req, res) => {
 app.post("/addAnswer", (req, res) => {
   let answer = req.body.answer;
   let questionID = req.body.questionID;
-  jsonReader("./data.json", (err, oldList) => {
+  jsonReader(fileDataName, (err, oldList) => {
     if (err) {
       console.log("Error reading file:", err);
       res.send("fail");
@@ -269,7 +274,7 @@ app.post("/addAnswer", (req, res) => {
     });
     question.Answers = [...question.Answers, answerObject];
 
-    fs.writeFile("./data.json", JSON.stringify(oldList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(oldList), (err) => {
       if (err) {
         console.log("Error writing file:", err);
         res.send("fail");
@@ -282,7 +287,7 @@ app.post("/addAnswer", (req, res) => {
 app.post("/deleteAnswer", (req, res) => {
   let answerID = req.body.answerID;
   let questionID = req.body.questionID;
-  jsonReader("./data.json", (err, oldList) => {
+  jsonReader(fileDataName, (err, oldList) => {
     if (err) {
       console.log("Error reading file:", err);
       res.send("fail");
@@ -295,7 +300,7 @@ app.post("/deleteAnswer", (req, res) => {
     question.Answers = question.Answers.filter(function (element) {
       return element.id !== answerID;
     });
-    fs.writeFile("./data.json", JSON.stringify(oldList), (err) => {
+    fs.writeFile(fileDataName, JSON.stringify(oldList), (err) => {
       if (err) {
         console.log("Error writing file:", err);
         res.send("fail");

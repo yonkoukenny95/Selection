@@ -1,0 +1,32 @@
+@keyframes loading {
+    0% { 
+        background-position: right center;
+    }
+    50% { 
+        background-position: left center;
+    }
+    100% { 
+        background-position: right center;
+    }
+   }
+.wrapper .box div:nth-child(1) label {
+    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+    color: #fff;
+    animation: loading 4s linear infinite;
+    background-size: 200% auto;
+}
+
+.wrapper .box div:nth-child(2) label {
+    background-image: linear-gradient(to right, #757F9A 0%, #D7DDE8 51%, #757F9A 100%);
+    color: #fff;
+    animation: loading 4s linear infinite;
+    background-size: 200% auto;
+}
+
+.wrapper .box div:nth-child(3) label {
+    background-image: linear-gradient(to right, #603813 0%, #b29f94 51%, #603813 100%);
+    color: #fff;
+    animation: loading 4s linear infinite;
+    background-size: 200% auto;
+}
+

@@ -48,8 +48,9 @@
 
     #message {
         position: relative;
+        text-align: center;
         min-height: 50vh;
-        font-size: 5vw;
+        font-size: 4vw;
         padding: 30px;
     }
 }
