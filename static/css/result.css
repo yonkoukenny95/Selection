@@ -9,24 +9,38 @@
         background-position: right center;
     }
    }
-.wrapper .box div:nth-child(1) label {
-    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+.wrapper .box label.third-prize {
+    background-image: linear-gradient(to right, #F09819 0%, #F0B460 40%, #F2D4AA 51%,  #F0B460 55%, #BD8E4B 100%);
+    color: #333;
+    animation: loading 8s ease infinite;
+    background-size: 200% auto;
+}
+.wrapper .box label.third-prize span{
+    color:#0261AF;
+}
+
+
+.wrapper .box label.second-prize {
+    background-image: linear-gradient(to right, #0261AF 0%, #0285F0 40%, #4BA7F2 51%,  #0285F0 55%, #0269BD 100%);
     color: #fff;
-    animation: loading 4s linear infinite;
+    animation: loading 8s ease infinite;
     background-size: 200% auto;
 }
 
-.wrapper .box div:nth-child(2) label {
-    background-image: linear-gradient(to right, #757F9A 0%, #D7DDE8 51%, #757F9A 100%);
+.wrapper .box label.second-prize span{
+    color:#FFF700;
+}
+
+.wrapper .box label.first-prize {
+    background-image: linear-gradient(to right, #ED1C24 0%, #F01D24 40%, #F2666A 51%,  #F01D24 55%, #BD171C 100%);
     color: #fff;
-    animation: loading 4s linear infinite;
+    animation: loading 8s ease infinite;
     background-size: 200% auto;
 }
 
-.wrapper .box div:nth-child(3) label {
-    background-image: linear-gradient(to right, #603813 0%, #b29f94 51%, #603813 100%);
-    color: #fff;
-    animation: loading 4s linear infinite;
-    background-size: 200% auto;
+.wrapper .box label.first-prize span{
+    color:#FFFF19;
 }
+
+
 

@@ -104,7 +104,6 @@ function displayAnswer(element, questionID) {
 
 function addCheckBoxEvent() {
   var checkboxes = document.querySelectorAll("input[type=checkbox]");
-  console.log(checkboxes.length);
   checkboxes.forEach(function (checkbox) {
     checkbox.addEventListener("change", function () {
       let maximum = 3;
@@ -137,8 +136,6 @@ function submitForm() {
     const params = {
       answers: answers,
     };
-
-    console.log(params);
     var http = new XMLHttpRequest();
     http.open("POST", "/submitAnswers", true);
     http.setRequestHeader("Content-type", "application/json");
