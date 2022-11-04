@@ -10,3 +10,22 @@ https://nodejs.org/en/download/package-manager/#centos-fedora-and-red-hat-enterp
 # run NodeJS
 cd ~/Selection
 node server.js
+
+
+/* Thay logo */
+- Thay logo.png trong folder static/images
+
+/*Thay background*/
+- Thay background.jpg trong folder static/images
+
+/*Đổi password*/
+- Dòng 67 trong file server.js, nhớ restart Nodejs
+
+/*Custom giao diện*/
+- Thay file css trong folder static/css
+
+/* Link vào các đường dẫn */
+/index: trang bình chọn cho khán giả
+/vip: giành cho khách vip
+/result : xem kết quả
+/admin: trang quản trị
