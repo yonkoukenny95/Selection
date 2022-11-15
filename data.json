@@ -1,13 +1,1 @@
-[
-  {
-    "ID": "1666673175015",
-    "Question": "Bình chọn bài hát hay nhất tháng 10",
-    "Answers": [
-      { "id": "1666673250390", "content": "Tòng Phu - Kayo", "vote": 0 },
-      { "id": "1666673283474", "content": "Có chơi có chịu - Karik", "vote": 0 },
-      { "id": "1666673303328", "content": "Waiting for you - Mono, Orion", "vote": 0 },
-      { "id": "1666673326271", "content": "Thế giới trong em - Hương Ly", "vote": 0 }
-    ],
-    "Public": true
-  }
-]
+[{"ID":"1666673175015","Question":"Bình chọn bài hát hay nhất tháng 10","Answers":[{"id":"1666673250390","content":"Tòng Phu - Kayo","vote":15},{"id":"1666673283474","content":"Có chơi có chịu - Karik","vote":5},{"id":"1666673303328","content":"Waiting for you - Mono, Orion","vote":0},{"id":"1666673326271","content":"Thế giới trong em - Hương Ly","vote":0}],"Public":true}]
